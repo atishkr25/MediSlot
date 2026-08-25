@@ -17,10 +17,12 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors())
-
 app.use(cors({
-  origin: "https://medi-slot-frontend-c7di9k7d1-atishkumar6115-2305s-projects.vercel.app/",
+  origin: [
+    "https://medi-slot-frontend-c7di9k7d1-atishkumar6115-2305s-projects.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:5174"
+  ],
   credentials: true
 }))
 
