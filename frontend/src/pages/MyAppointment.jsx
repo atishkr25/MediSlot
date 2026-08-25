@@ -115,7 +115,7 @@ const MyAppointments = () => {
           image: doc.image,
           address: doc.address || { line1: "Street X", line2: "City Y" }
         },
-        slotDate: `12_0${idx + 1}_2025`,
+        slotDate: (() => { const d = new Date(); d.setDate(d.getDate() + idx); return `${d.getDate()}_${d.getMonth() + 1}_${d.getFullYear()}`; })(),
         slotTime: `${10 + idx}:00 AM`,
         payment: idx === 1,         // Simulate second one as paid
         isCompleted: idx === 2,     // Simulate third one as completed
